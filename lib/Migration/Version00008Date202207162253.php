@@ -14,8 +14,8 @@ class Version00008Date202207162253 extends SimpleMigrationStep {
 		/** @var ISchemaWrapper $schema */
 		$schema = $schemaClosure();
 
-		$table = $schema->createTable('user_oidc_id4me');
-                $table->addColumn('client_secret', 'string', [
+		$table = $schema->getTable('user_oidc_id4me');
+                $table->updateColumn('client_secret', 'string', [
                         'notnull' => true,
                         'length' => 128,
                 ]);

@@ -15,11 +15,18 @@ class Version00008Date202207162253 extends SimpleMigrationStep {
 		$schema = $schemaClosure();
 
 		$table = $schema->getTable('user_oidc_id4me');
-                $table->updateColumn('client_secret', 'string', [
+		$table->dropColumn('client_secret');
+                $table->addColumn('client_secret', 'string', [
                         'notnull' => true,
                         'length' => 128,
                 ]);
 
+		$table = $schema->getTable('user_oidc_providers');
+		$table->dropColumn('client_secret');
+                $table->addColumn('client_secret', 'string', [
+                        'notnull' => true,
+                        'length' => 128,
+                ]);
 
 		return $schema;
 	}

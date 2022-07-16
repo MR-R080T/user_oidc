@@ -38,7 +38,7 @@ class Version00003Date20200420120107 extends SimpleMigrationStep {
 		]);
 		$table->addColumn('client_secret', 'string', [
 			'notnull' => true,
-			'length' => 64,
+			'length' => 128,
 		]);
 		$table->setPrimaryKey(['id']);
 

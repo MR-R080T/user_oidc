@@ -41,7 +41,7 @@ class Version00004Date20200428102743 extends SimpleMigrationStep {
 		]);
 		$table->addColumn('client_secret', 'string', [
 			'notnull' => true,
-			'length' => 128,
+			'length' => 64,
 		]);
 		$table->addColumn('discovery_endpoint', 'string', [
 			'notnull' => false,
